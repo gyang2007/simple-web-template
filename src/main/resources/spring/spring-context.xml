@@ -9,6 +9,7 @@
 
     <context:property-placeholder location="classpath:db.properties, classpath:config.properties" />
 
+    <bean class="com.gyang.web.listener.SpringApplicationListener"></bean>
     <bean class="com.gyang.utils.SpringServiceUtil" />
 
     <!--创建jdbc数据源 -->
@@ -23,8 +24,6 @@
         <property name="maxWait" value="${jdbc.maxWait}"/>
         <property name="validationQuery" value="${jdbc.validationQuery}" />
     </bean>
-
-
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -42,7 +41,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.qunar.ibeplus.db.dao" />
+        <property name="basePackage" value="com.gyang.db.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 

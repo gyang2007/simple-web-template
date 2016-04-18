@@ -43,6 +43,10 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <listener>
+        <listener-class>com.gyang.listener.SpringWrapper</listener-class>
+    </listener>
+
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/404.html</location>
